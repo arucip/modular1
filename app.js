@@ -980,11 +980,11 @@ if(!seen())open();
 /* ---------- carga de módulos ---------- */
 function loadScript(src){return new Promise(function(ok,no){var s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=function(){no(new Error(src))};document.head.appendChild(s)})}
 /* Al abrir index.html con doble clic (file://) los navegadores bloquean fetch(): se usa offline-data.js como respaldo. */
-function offlineFiles(){return window.__ARU_FILES?Promise.resolve(window.__ARU_FILES):loadScript("offline-data.js").then(function(){return window.__ARU_FILES})}
-function fromOffline(u,err){return offlineFiles().then(function(f){if(!f||!(u in f))throw err||new Error(u);return JSON.parse(JSON.stringify(f[u]))})}
+function offlineFiles(){return window.__ARU_FILES?Promise.resolve(window.__ARU_FILES):loadScript("offline-data.js").then(function(){return window.__ARU_FILES},function(){return null})}
+function fromOffline(u,err){return offlineFiles().then(function(f){if(!f||!(u in f))throw err||new Error("No se encontró el archivo: "+u);return JSON.parse(JSON.stringify(f[u]))})}
 function J(u){
   if(location.protocol==="file:")return fromOffline(u);
-  return fetch(u).then(function(r){if(!r.ok)throw new Error(u);return r.json()}).catch(function(e){return fromOffline(u,e)});
+  return fetch(u).then(function(r){if(!r.ok)throw new Error("No se encontró el archivo: "+u+" (HTTP "+r.status+")");return r.json()}).catch(function(e){return fromOffline(u,e)});
 }
 var PK={};
 ARU.loadPack=function(n){if(PK[n])return PK[n];return PK[n]=J("modules/packs/"+n+".json").then(function(p){
