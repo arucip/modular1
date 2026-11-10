@@ -1,0 +1,1 @@
+{"pack":"emergencia","items":[{"id":"parolog","t":"Registro del último PARO","kind":"custom","js":"custom/paro.js"},{"id":"anaf","t":"Anafilaxia paso a paso","kind":"custom","js":"custom/dosis.js"},{"id":"cron","t":"Cronómetro FR-FC","kind":"custom","js":"custom/cronometro.js"},{"id":"rcp","t":"Ritmo para una buena RCP","kind":"custom","js":"custom/paro.js"}]}

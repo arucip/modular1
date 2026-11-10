@@ -1,0 +1,1 @@
+{"pack":"endocrino_metab","items":[{"id":"cad","t":"Cetoacidosis diabética: paso a paso","kind":"custom","js":"custom/dosis.js"},{"id":"ehh","t":"Estado hiperosmolar hiperglucémico: paso a paso","kind":"custom","js":"custom/dosis.js"},{"id":"gluc","t":"Glucosa / dextrosa parenteral","kind":"custom","js":"custom/dosis.js"}]}
