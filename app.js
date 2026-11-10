@@ -32,7 +32,7 @@ document.getElementById("nojs").hidden=true
 ;
 (function(){var n=document.getElementById("nojs");function show(t){try{n.hidden=false;n.innerHTML="<b>Arucip no pudo iniciar.</b><br>"+t+"<br>Enviá una captura de este mensaje a Gonzalo."}catch(x){}}
 window.addEventListener("error",function(e){if(!window.__booted)show((e&&e.message?e.message:"error")+(e&&e.lineno?" (línea "+e.lineno+")":""))});
-window.addEventListener("load",function(){if(!window.__booted)show("No terminó de cargar.")});})()
+window.addEventListener("load",function(){setTimeout(function(){if(!window.__booted)show("No terminó de cargar.")},15000)});})()
 ;
 /* ---------- migración de datos locales (Picu Pocket) ---------- */
 /* Arucip · migración de datos locales (Picu Pocket → Arucip).
@@ -1000,6 +1000,8 @@ async function boot(){
   var files=["cronometro","dosis","cards","calculadoras","pocus","paro","quemados","otros"];
   for(var i=0;i<files.length;i++)await loadScript("modules/custom/"+files[i]+".js");
   __tail();
+  window.__booted=true;
+  var nj=document.getElementById("nojs");if(nj)nj.hidden=true;
 }
 function start(){boot().catch(function(e){var n=document.getElementById("nojs");if(n){n.hidden=false;n.innerHTML="<b>Arucip no pudo iniciar.</b><br>"+String(e&&e.message||e)}})}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();
