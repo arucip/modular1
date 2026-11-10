@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 120" role="img" aria-label="P de UCIP con la vara de Esculapio">
+  <!-- P (de UCIP) -->
+  <path d="M26 112V26h18a19 19 0 0 1 0 38H26" fill="none" stroke="#1F5368" stroke-width="15" stroke-linejoin="miter"/>
+  <!-- vara de Esculapio -->
+  <line x1="26" y1="8" x2="26" y2="118" stroke="#D9A441" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="26" cy="7" r="5.5" fill="#D9A441"/>
+  <!-- serpiente -->
+  <path d="M26 102c-15-3-15-13 0-16s15-12 0-16-15-12 0-16 12-9 5-13" fill="none" stroke="#FFFFFF" stroke-opacity=".9" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M26 102c-15-3-15-13 0-16s15-12 0-16-15-12 0-16 12-9 5-13" fill="none" stroke="#C27F62" stroke-width="4.2" stroke-linecap="round"/>
+  <circle cx="32" cy="25" r="3.2" fill="#C27F62"/>
+</svg>
